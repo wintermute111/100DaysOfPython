@@ -8,8 +8,8 @@ class Ball(Turtle):
         self.shape("square")
         self.penup()
         self.color("white")
-        self.x_move = 5
-        self.y_move = 5
+        self.x_move = 3
+        self.y_move = 3
 
     def move(self):
         self.goto(self.xcor() + self.x_move, self.ycor() + self.y_move)
