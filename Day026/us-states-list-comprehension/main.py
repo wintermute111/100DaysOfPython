@@ -21,10 +21,11 @@ while len(guessed_states) < 50:
     answer_state = scr.textinput(title=f"{len(guessed_states)}/50 States Correct",
                                  prompt="What's another state name?").title()
     if answer_state == "Exit":
-        missing_states = []
-        for state in states.state.values:
-            if state not in guessed_states:
-                missing_states.append(state)
+        missing_states = [state for state in states.state.values if state not in guessed_states]
+        # missing_states = []
+        # for state in states.state.values:
+        #     if state not in guessed_states:
+        #         missing_states.append(state)
         output_df = pandas.DataFrame(missing_states)
         output_df.to_csv("states_to_learn.csv")
         break
